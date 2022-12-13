@@ -7,7 +7,7 @@ function Main(props) {
     const userData = React.useContext(CurrentUserContext);
 
     return (
-        <main className="content">
+        <>
             <section className="profile">
                 <div className="profile__column">
                     <div onClick={props.onEditAvatar} style={{ backgroundImage: `url(${userData ? userData.avatar : ''})` }} className="profile__avatar"></div>
@@ -26,7 +26,7 @@ function Main(props) {
                     <Card onCardClick={props.onCardClick} onCardLike={props.onCardLike} onCardAgreement={props.onCardAgreement} card={card} key={card._id} {...card} />
                 )}
             </div>
-        </main>
+        </>
     );
 }
 

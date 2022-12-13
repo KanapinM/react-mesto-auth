@@ -6,6 +6,10 @@
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/header/__href/header__href.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__quit-button/header__quit-button.css);
 
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__column/profile__column.css);
@@ -31,6 +35,13 @@
 @import url(./blocks/card/__delete-button/card__delete-button.css);
 @import url(./blocks/card/__delete-button/_active/card__delete-button_active.css);
 
+@import url(./blocks/user/__container/user__container.css);
+@import url(./blocks/user/__form/user__form.css);
+@import url(./blocks/user/__title/user__title.css);
+@import url(./blocks/user/__submit-button/user__submit-button.css);
+@import url(./blocks/user/__input/user__input.css);
+@import url(./blocks/user/__are-registered/user__are-registered.css);
+@import url(./blocks/user/__are-registered/_type/_link/user__are-registrated_type_link.css);
 
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_open/popup_open.css);
@@ -43,6 +54,7 @@
 @import url(./blocks/popup/_type/_image/popup_type_image.css);
 @import url(./blocks/popup/__title/popup__title.css);
 @import url(./blocks/popup/__title/_agreement/popup__title_agreement.css);
+@import url(./blocks/popup/__title/_status/popup__title_status.css);
 @import url(./blocks/popup/__form/popup__form.css);
 @import url(./blocks/popup/__input/popup__input.css);
 @import url(./blocks/popup/__input/popup__input.css);
@@ -53,6 +65,9 @@
 
 @import url(./blocks/popup/__place-image/popup__place-image.css);
 @import url(./blocks/popup/__place-name/popup__place-name.css);
+@import url(./blocks/popup/__info-tooltip-image/popup__info-tooltip-image.css);
+@import url(./blocks/popup/__info-tooltip-image/_type_fail/popup__info-tooltip-image_type_fail.css);
+@import url(./blocks/popup/__info-tooltip-image/_type_success/popup__info-tooltip-image_type_success.css);
 
 @import url(./blocks/popup/__close-button/_image/popup__close-button_image.css);
 @import url(./blocks/popup/__submit-button/popup__submit-button.css);
