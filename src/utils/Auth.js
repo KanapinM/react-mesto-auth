@@ -57,10 +57,9 @@ class Auth {
                     return data;
                 }
             })
-            .catch(err => console.log(err))
     }
 
-    getToken(jwt) {
+    checkToken(jwt) {
         return fetch(`${this._URL}/users/me`, {
             method: 'GET',
             headers: {

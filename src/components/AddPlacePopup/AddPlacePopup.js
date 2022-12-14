@@ -27,13 +27,29 @@ function AddPlacePopup(props) {
             buttonText="Создать"
             onSubmit={handleSubmit}
         >
-            <input type="text" name="name" ref={cardNameRef} className="popup__input popup__input_type_place" id="place-input"
-                placeholder="Название" required minLength="2" maxLength="30" />
-            <span className="popup__input-error place-input-error"></span>
+            <input
+                type="text"
+                name="name"
+                ref={cardNameRef}
+                className="popup__input popup__input_type_place"
+                id="place-input"
+                placeholder="Название"
+                required
+                minLength="2"
+                maxLength="30"
+            />
+            <span className="popup__input-error place-input-error" />
 
-            <input type="url" name="link" ref={cardLinkRef} className="popup__input popup__input_type_photo" id="href-input" required
-                placeholder="Ссылка на картинку" />
-            <span className="popup__input-error href-input-error"></span>
+            <input
+                type="url"
+                name="link"
+                ref={cardLinkRef}
+                className="popup__input popup__input_type_photo"
+                id="href-input"
+                required
+                placeholder="Ссылка на картинку"
+            />
+            <span className="popup__input-error href-input-error" />
         </PopupWithForm>
     )
 }

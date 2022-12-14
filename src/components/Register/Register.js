@@ -28,23 +28,39 @@ function Register({ onSubmit }) {
         }
         const { email, password } = userData;
         handleRegister(email, password);
-        setUserData({
-            email: "",
-            password: "",
-        });
 
     }
 
 
     return (
         <div className="user__container">
-            <h2 className="user__title">Регистрация</h2>
+            <h2 className="user__title">
+                Регистрация
+            </h2>
+
             <form onSubmit={handleSubmit} className="user__form">
-                <input onChange={handleChange} className="user__input" name="email" type="email" placeholder="Email" required></input>
-                <input onChange={handleChange} className="user__input" name="password" type="password" placeholder="Пароль" required></input>
-                <button type="submit" className="user__submit-button">Зарегистрироваться</button>
+                <input
+                    onChange={handleChange}
+                    className="user__input"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                />
+                <input
+                    onChange={handleChange}
+                    className="user__input"
+                    name="password"
+                    type="password"
+                    placeholder="Пароль"
+                    required
+                />
+                <button type="submit" className="user__submit-button">
+                    Зарегистрироваться
+                </button>
                 <p className="user__are-registered">
-                    Уже зарегистрированы? <Link to="/signin" className="user__are-registrated_type_link">
+                    Уже зарегистрированы? &nbsp;
+                    <Link to="/signin" className="user__are-registrated_type_link">
                         Войти
                     </Link>
                 </p>

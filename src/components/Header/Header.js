@@ -3,15 +3,20 @@ import logo from '../../images/mesto.svg';
 import { Switch, Route, Link } from "react-router-dom";
 
 function Header(props) {
-    // console.log(props);
 
     return (
         <div className="header">
-            <img className="header__logo" src={logo} alt="текстовый логтип Место Раша" />
-            <Switch>
+            <img
+                className="header__logo"
+                src={logo}
+                alt="текстовый логтип Место Раша"
+            />
 
+            <Switch>
                 <Route path={"/signin"}>
-                    <Link to="/signup" className="header__href">
+                    <Link
+                        to="/signup"
+                        className="header__href">
                         Регистрация
                     </Link>
                 </Route>
@@ -21,18 +26,22 @@ function Header(props) {
                         Войти
                     </Link>
                 </Route>
+
                 <Route path="/">
                     <div className="header__container">
-                        {/* <p className="header__email">{props.email}</p> */}
-                        <button onClick={props.onQuit} className="header__quit-button">Выйти</button>
+                        <p className="header__email">{props.email}</p>
+                        <button
+                            onClick={props.onQuit}
+                            className="header__quit-button">
+                            Выйти
+                        </button>
                     </div>
                 </Route>
-
             </Switch>
+
         </div>
     );
 }
 
 export default Header;
 
-// строка 26 - почему-то ломается сайт, при том что в прос email есть

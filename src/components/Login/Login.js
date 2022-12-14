@@ -27,21 +27,40 @@ function Login({ onSubmit, ...props }) {
         }
         const { email, password } = userData;
         handleLogin(email, password);
-        setUserData({
-            email: "",
-            password: "",
-        });
-
     }
 
 
     return (
         <div className="user__container">
-            <h2 className="user__title">Вход</h2>
-            <form onSubmit={handleSubmit} className="user__form">
-                <input onChange={handleChange} className="user__input" name="email" type="email" placeholder="Email" required></input>
-                <input onChange={handleChange} className="user__input" name="password" type="password" placeholder="Пароль" required></input>
-                <button type="submit" className="user__submit-button">Войти</button>
+            <h2 className="user__title">
+                Вход
+            </h2>
+            <form
+                onSubmit={handleSubmit}
+                className="user__form">
+
+                <input
+                    onChange={handleChange}
+                    className="user__input"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                />
+                <input
+                    onChange={handleChange}
+                    className="user__input"
+                    name="password"
+                    type="password"
+                    placeholder="Пароль"
+                    required
+                />
+                <button
+                    type="submit"
+                    className="user__submit-button">
+                    Войти
+                </button>
+
             </form>
         </div>
 

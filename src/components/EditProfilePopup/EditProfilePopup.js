@@ -4,10 +4,10 @@ import PopupWithForm from '../Popup/PopupWithForm/PopupWithForm';
 
 function EditProfilePopup(props) {
     const currentUser = React.useContext(CurrentUserContext);
-    const [placeHolders, setPlaceHolders] = React.useState({});
+    const [values, inputsValues] = React.useState({});
 
     React.useEffect(() => {
-        setPlaceHolders({
+        inputsValues({
             name: currentUser ? currentUser.name : '',
             about: currentUser ? currentUser.about : ''
         })
@@ -15,12 +15,12 @@ function EditProfilePopup(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onUpdateUser(placeHolders);
+        props.onUpdateUser(values);
     }
 
     function handleChange(evt) {
-        setPlaceHolders({
-            ...placeHolders,
+        inputsValues({
+            ...values,
             [evt.target.name]: evt.target.value,
         })
     }
@@ -34,13 +34,33 @@ function EditProfilePopup(props) {
             buttonText="Сохранить"
             onSubmit={handleSubmit}
         >
-            <input type="text" onChange={handleChange} value={placeHolders.name || ''} className="popup__input popup__input_type_name" id="name-input"
-                placeholder="Ваше Имя" required minLength="2" maxLength="40" name="name" />
-            <span className="popup__input-error name-input-error"></span>
+            <input
+                type="text"
+                onChange={handleChange}
+                value={values.name || ''}
+                className="popup__input popup__input_type_name"
+                id="name-input"
+                placeholder="Ваше Имя"
+                required
+                minLength="2"
+                maxLength="40"
+                name="name"
+            />
+            <span className="popup__input-error name-input-error" />
 
-            <input type="text" onChange={handleChange} value={placeHolders.about || ''} className="popup__input popup__input_type_about" id="about-input"
-                placeholder="Интересы" required minLength="2" maxLength="200" name="about" />
-            <span className="popup__input-error about-input-error"></span>
+            <input
+                type="text"
+                onChange={handleChange}
+                value={values.about || ''}
+                className="popup__input popup__input_type_about"
+                id="about-input"
+                placeholder="Интересы"
+                required
+                minLength="2"
+                maxLength="200"
+                name="about"
+            />
+            <span className="popup__input-error about-input-error" />
         </PopupWithForm>
     )
 }
