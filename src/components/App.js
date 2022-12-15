@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
@@ -32,9 +32,8 @@ function App() {
   const [cards, setCards] = React.useState([]);
   const [card, setCard] = React.useState({});
   const [isInfoTooltipOpen, setInfoTooltipOpen] = React.useState(false);
-  const [email, setEmail] = React.useState();
-  const [responce, setResponce] = React.useState(false);
-
+  const [email, setEmail] = React.useState('');
+  const [isSuccessTooltipStatus, setTooltipStatus] = React.useState(false);
 
   React.useEffect(() => {
     checkToken();
@@ -130,7 +129,6 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        setInfoTooltipOpen(true);
         openTooltip(false);
       });
   }
@@ -141,14 +139,12 @@ function App() {
       .then((data) => {
         if (data) {
           setEmail(email);
-          setInfoTooltipOpen(true);
           openTooltip(true);
           history.push('/signin');
         }
       })
       .catch((err) => {
         console.log(err);
-        setInfoTooltipOpen(true);
         openTooltip(false);
       });
   }
@@ -176,8 +172,9 @@ function App() {
 
   function openTooltip(boolean) {
     setInfoTooltipOpen(true);
-    setResponce(boolean);
+    setTooltipStatus(boolean);
   };
+
 
   const closeAllPopups = () => {
     setIsEditProfilePopupOpen(false);
@@ -248,7 +245,7 @@ function App() {
           onClose={closeAllPopups}
         />
         <InfoTooltip
-          isSuccessTooltipStatus={responce}
+          isSuccessTooltipStatus={isSuccessTooltipStatus}
           isInfoTooltipOpen={isInfoTooltipOpen}
           onClose={closeAllPopups}
         />

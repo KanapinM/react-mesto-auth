@@ -11,7 +11,7 @@ function InfoTooltip(props) {
             />
             <div className="popup__container">
                 <div className={`popup__info-tooltip-image ${props.isSuccessTooltipStatus ? 'popup__info-tooltip-image_type_success' : 'popup__info-tooltip-image_type_fail'} `} />
-                <h2 className="popup__title popup__title_status">
+                < h2 className="popup__title popup__title_status">
                     {props.isSuccessTooltipStatus ? 'Вы успешно зарегистрировались!' : 'Что-то пошло не так! Попробуйте ещё раз.'}
                 </h2>
             </div>

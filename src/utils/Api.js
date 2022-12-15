@@ -1,9 +1,9 @@
 export class Api {
-    #onResponce(responce) {//не совсем понял ккомментарий onResponce => onResponse
-        if (responce.ok) {
-            return responce.json();
+    #onResponse(response) {//не совсем понял ккомментарий onResponse => onResponse
+        if (response.ok) {
+            return response.json();
         }
-        return Promise.reject(console.error(`Возникла ошибка, код - ${responce.status}`));
+        return Promise.reject(console.error(`Возникла ошибка, код - ${response.status}`));
     }
 
     constructor(config) {
@@ -16,7 +16,7 @@ export class Api {
             method: 'GET',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     editUserData(data) {
@@ -25,7 +25,7 @@ export class Api {
             headers: this._headers,
             body: JSON.stringify(data),
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     changeAvatar(url) {
@@ -36,7 +36,7 @@ export class Api {
                 avatar: url,
             }),
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     getInitialCards() {
@@ -44,7 +44,7 @@ export class Api {
             method: 'GET',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     };
 
     addCard(data) {
@@ -53,7 +53,7 @@ export class Api {
             headers: this._headers,
             body: JSON.stringify(data),
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     removeCard(cardId) {
@@ -61,7 +61,7 @@ export class Api {
             method: 'DELETE',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     likeCard(cardId) {
@@ -69,7 +69,7 @@ export class Api {
             method: 'PUT',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     unlikeCard(cardId) {
@@ -77,7 +77,7 @@ export class Api {
             method: 'DELETE',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     changeLikeCardStatus(cardId, isLiked) {
